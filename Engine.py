@@ -3,7 +3,7 @@ import chess.engine
 import time
 
 start=time.time()
-engine = chess.engine.SimpleEngine.popen_uci(r"C:\Program Files (x86)\LucasChess\Engines\Windows\stockfish\Windows\stockfish_10_x64_bmi2.exe")
+engine = chess.engine.SimpleEngine.popen_uci(r"C:\Users\He.Wang\rnd\stockfish-10-win\Windows\stockfish_10_x64_bmi2.exe")
 gap1 = time.time()-start
 def move(fen_str):
     global engine

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="526,1262.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="574.666666666667,1656.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -22,6 +22,7 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -46,53 +47,75 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="486,1182.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="534.666666666667,1576.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="old_FEN" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Preparation" sap:VirtualizedContainerService.HintSize="464,100.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence DisplayName="Preparation" sap:VirtualizedContainerService.HintSize="512.666666666667,100.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Sequence>
-    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="464,918" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="True">
-      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="336,750" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="512.666666666667,1312" sap2010:WorkflowViewState.IdRef="DoWhile_1" Condition="True">
+      <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="486,1144" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="FEN" />
           <Variable x:TypeArguments="x:String" Name="BM" />
           <Variable x:TypeArguments="x:Int32" Name="ORI" />
-          <Variable x:TypeArguments="x:Boolean" Name="NewRound" />
         </Sequence.Variables>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="314,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Observe" />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Get the current layout" sap:VirtualizedContainerService.HintSize="314,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Layout.xaml">
-          <ui:InvokeWorkflowFile.Arguments>
-            <OutArgument x:TypeArguments="x:String" x:Key="FenStr">[FEN]</OutArgument>
-            <OutArgument x:TypeArguments="x:Int32" x:Key="Orientation">[ORI]</OutArgument>
-          </ui:InvokeWorkflowFile.Arguments>
-        </ui:InvokeWorkflowFile>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="314,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Thinking" />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Thinking about the best move" sap:VirtualizedContainerService.HintSize="314,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Engine.xaml">
+        <ui:Comment sap:VirtualizedContainerService.HintSize="464,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Observe" />
+        <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="464,480.666666666667" sap2010:WorkflowViewState.IdRef="DoWhile_2" Condition="[old_FEN = FEN]">
+          <Sequence sap:VirtualizedContainerService.HintSize="336,312.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="Assign_11">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[old_FEN]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[FEN]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Get the current layout" sap:VirtualizedContainerService.HintSize="314,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Layout.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="x:String" x:Key="FenStr">[FEN]</OutArgument>
+                <OutArgument x:TypeArguments="x:Int32" x:Key="Orientation">[ORI]</OutArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Old_FenStr">[old_FEN]</InArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </DoWhile>
+        <ui:Comment sap:VirtualizedContainerService.HintSize="464,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Thinking" />
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Thinking about the best move" sap:VirtualizedContainerService.HintSize="464,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Engine.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <OutArgument x:TypeArguments="x:String" x:Key="BestMove">[BM]</OutArgument>
             <InArgument x:TypeArguments="x:String" x:Key="FenStr">[FEN]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="314,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Take Action" />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Move workflow" sap:VirtualizedContainerService.HintSize="314,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Move.xaml">
+        <ui:Comment sap:VirtualizedContainerService.HintSize="464,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Take Action" />
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Move workflow" sap:VirtualizedContainerService.HintSize="464,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Move.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:Int32" x:Key="Ori">[ORI]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="BM">[BM]</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="old_BM">[old_FEN]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>

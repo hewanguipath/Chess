@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="FenStr" Type="OutArgument(x:String)" />
     <x:Property Name="Orientation" Type="OutArgument(x:Int32)" />
+    <x:Property Name="Old_FenStr" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>758.666666666667,4312.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>710,2459.33333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -59,7 +60,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="718.666666666667,4232.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="670,2379.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="idx" />
       <Variable x:TypeArguments="s:String[]" sap2010:Annotation.AnnotationText="33, R&#xA;34, B&#xA;35, B&#xA;36, N&#xA;37, R&#xA;38, P&#xA;40, N&#xA;41, n&#xA;42 b&#xA;43,44,45,46, p&#xA;47, b&#xA;48, n&#xA;49, r" Default="[{&quot;R&quot;,&quot;N&quot;,&quot;B&quot;,&quot;Q&quot;,&quot;K&quot;,&quot;B&quot;,&quot;N&quot;,&quot;R&quot;,&quot;P&quot;,&quot;P&quot;,&quot;P&quot;,&quot;P&quot;,&quot;P&quot;,&quot;P&quot;,&quot;P&quot;,&quot;P&quot;,&quot;p&quot;,&quot;p&quot;,&quot;p&quot;,&quot;p&quot;,&quot;p&quot;,&quot;p&quot;,&quot;p&quot;,&quot;p&quot;,&quot;r&quot;,&quot;n&quot;,&quot;b&quot;,&quot;q&quot;,&quot;k&quot;,&quot;b&quot;,&quot;n&quot;,&quot;r&quot;}]" Name="FENID" />
@@ -71,13 +72,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'iexplore.exe Live'" sap:VirtualizedContainerService.HintSize="696.666666666667,4108.66666666667" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="32ca6bc99a0ce23e1db40596da86577e" Selector="&lt;html app='chrome.exe' title='*s - Chess.com' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'iexplore.exe Live'" sap:VirtualizedContainerService.HintSize="648,2255.33333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="32ca6bc99a0ce23e1db40596da86577e" Selector="&lt;html app='chrome.exe' title='* - Chess.com' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap:VirtualizedContainerService.HintSize="682.666666666667,3962.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence sap:VirtualizedContainerService.HintSize="634,2109.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Default="0" Name="ContinueEmpty" />
               <Variable x:TypeArguments="x:Int32" Name="OldY_Pix" />
@@ -88,16 +89,46 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="True" sap:VirtualizedContainerService.HintSize="660.666666666667,961.333333333333" sap2010:WorkflowViewState.IdRef="If_8">
+            <If Condition="False" DisplayName="If PlayMode" sap:VirtualizedContainerService.HintSize="612,1493.33333333333" sap2010:WorkflowViewState.IdRef="If_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="486,810.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                <Sequence sap:VirtualizedContainerService.HintSize="486,1342.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_18">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[Old_FenStr = FenStr]" DisplayName="If Layout error, no move made, refresh" sap:VirtualizedContainerService.HintSize="464,492" sap2010:WorkflowViewState.IdRef="If_11">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="336,341.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:RefreshBrowser Browser="{x:Null}" DisplayName="Refresh Browser" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="RefreshBrowser_4" />
+                        <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey 'chrome.exe'" EmptyField="False" sap:VirtualizedContainerService.HintSize="314,155.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                          <ui:SendHotkey.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="f629f7ecbf5a8754a7a07cc6bc83ba20" Selector="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Reload site?' /&gt;&lt;wnd cls='Intermediate D3D Window' /&gt;" WaitForReady="INTERACTIVE" />
+                          </ui:SendHotkey.Target>
+                        </ui:SendHotkey>
+                      </Sequence>
+                    </If.Then>
+                  </If>
                   <ui:GetFullText DisplayName="Get Full Text 'SPAN  main-clock-top'" sap:VirtualizedContainerService.HintSize="464,106" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="False">
                     <ui:GetFullText.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6650bd8e79f35725f2446a826d593b71" Selector="&lt;webctrl id='main-clock-bottom' tag='SPAN' /&gt;" WaitForReady="COMPLETE" />
@@ -139,7 +170,7 @@
                           </ui:CursorPosition>
                         </ui:Click.CursorPosition>
                         <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c501b501a3b304d1ef43ff2768fb1d25" Selector="&lt;html app='chrome.exe' title='Live Chess - Chess.com' /&gt;&lt;webctrl aaname='       New 10 min     ' parentid='board-layout-chessboard' tag='BUTTON' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c501b501a3b304d1ef43ff2768fb1d25" Selector="&lt;webctrl parentid='board-layout-chessboard' tag='BUTTON' /&gt;" TimeoutMS="1000" WaitForReady="COMPLETE" />
                         </ui:Click.Target>
                       </ui:Click>
                       <ui:GetFullText DisplayName="Get Full Text 'SPAN  main-clock-top'" sap:VirtualizedContainerService.HintSize="314,106" sap2010:WorkflowViewState.IdRef="GetFullText_2" IgnoreHidden="False">
@@ -155,10 +186,10 @@
                 </Sequence>
               </If.Then>
             </If>
-            <DoWhile DisplayName="Get the current layout" sap:VirtualizedContainerService.HintSize="660.666666666667,2438" sap2010:WorkflowViewState.IdRef="DoWhile_2">
+            <DoWhile DisplayName="Get the current layout" sap:VirtualizedContainerService.HintSize="612,52.6666666666667" sap2010:WorkflowViewState.IdRef="DoWhile_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
@@ -358,7 +389,7 @@
                 </If>
               </Sequence>
             </DoWhile>
-            <Assign DisplayName="reset index" sap:VirtualizedContainerService.HintSize="660.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_9">
+            <Assign DisplayName="reset index" sap:VirtualizedContainerService.HintSize="612,62" sap2010:WorkflowViewState.IdRef="Assign_9">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Int32">[idx]</OutArgument>
               </Assign.To>
@@ -366,7 +397,7 @@
                 <InArgument x:TypeArguments="x:Int32">0</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Generate FEN" sap:VirtualizedContainerService.HintSize="660.666666666667,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[layout]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="Generate FEN" sap:VirtualizedContainerService.HintSize="612,52.6666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[layout]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
@@ -515,7 +546,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEach>
-            <Assign sap:VirtualizedContainerService.HintSize="660.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_26">
+            <Assign sap:VirtualizedContainerService.HintSize="612,62" sap2010:WorkflowViewState.IdRef="Assign_26">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[FenStr]</OutArgument>
               </Assign.To>
@@ -523,7 +554,7 @@
                 <InArgument x:TypeArguments="x:String">[FenStr.Remove(FenStr.Length - 1) + " "+ if(Orientation&lt;0, "w", "b") +" KQkq - 0 1"]</InArgument>
               </Assign.Value>
             </Assign>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="660.666666666667,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[FenStr]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="612,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[FenStr]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

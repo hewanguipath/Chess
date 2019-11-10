@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Engine" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Engine" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="BestMove" Type="OutArgument(x:String)" />
     <x:Property Name="FenStr" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>412,952.666666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>412,1466</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -59,34 +59,39 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Engine" sap:VirtualizedContainerService.HintSize="372,872.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Engine" sap:VirtualizedContainerService.HintSize="372,1386" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <p:PythonScope DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="350,748.666666666667" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Users\He.Wang\.conda\envs\PY36_TF" TargetPlatform="x64" Version="Python_36">
+    <p:PythonScope DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="350,1262" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="C:\Users\He.Wang\.conda\envs\PY36_TF" TargetPlatform="x64" Version="Python_36">
       <p:PythonScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,712.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336,1226" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="p:PythonObject" Name="script" />
               <Variable x:TypeArguments="p:PythonObject" Name="resObj" />
               <Variable x:TypeArguments="x:String" Name="restr" />
               <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="res" />
+              <Variable x:TypeArguments="s:DateTime" Default="[DateTime.Now]" Name="start" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;scope --- &quot; + (DateTime.Now - start).TotalSeconds.ToString]" />
             <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="314,58.6666666666667" sap2010:WorkflowViewState.IdRef="LoadScript_1" Result="[script]" ScriptFile="Engine.py" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_7" Text="[&quot;load --- &quot; + (DateTime.Now - start).TotalSeconds.ToString]" />
             <p:InvokeMethod DisplayName="Invoke Python Method" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" Instance="[script]" Name="move" Parameters="[{FenStr}]" Result="[resObj]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_8" Text="[&quot;exe --- &quot; + (DateTime.Now - start).TotalSeconds.ToString]" />
             <p:GetObject x:TypeArguments="x:String" DisplayName="Get Python Object" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="GetObject`1_4" PythonObject="[resObj]" Result="[restr]" />
             <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[restr]" />
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_10" Text="[&quot;Get --- &quot; + (DateTime.Now - start).TotalSeconds.ToString]" />
             <ui:Matches BuilderPattern="bestmove (\w)(\d)(\w)(\d)" sap:VirtualizedContainerService.HintSize="314,58.6666666666667" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[restr]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;bestmove &quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;ANYWCHAR&quot;,&quot;OperationName&quot;:&quot;Any word character&quot;,&quot;OperationValue&quot;:&quot;\\w&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:2,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Digit&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:3,&quot;OperationID&quot;:&quot;ANYWCHAR&quot;,&quot;OperationName&quot;:&quot;Any word character&quot;,&quot;OperationValue&quot;:&quot;\\w&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:4,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Digit&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="^(\w)(\d)(\w)(\d)" RegexOption="IgnoreCase" Result="[res]" />
             <Assign sap:VirtualizedContainerService.HintSize="314,62" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
@@ -96,6 +101,7 @@
                 <InArgument x:TypeArguments="x:String">[(Asc(res(0).groups(1).value)-96).ToString+res(0).groups(2).value+(Asc(res(0).groups(3).value)-96).ToString+res(0).groups(4).value]</InArgument>
               </Assign.Value>
             </Assign>
+            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_9" Text="[&quot;match --- &quot; + (DateTime.Now - start).TotalSeconds.ToString]" />
             <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[BestMove]" />
           </Sequence>
         </ActivityAction>

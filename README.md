@@ -15,3 +15,4 @@ Note, your account and IP might be banned if keep playing for a while.
 TODO:
 1. 2nd engine for Alpha-zero-chess in AI Fab
 2. Random delays to Mimic human behavior  
+3. Support https://www.chess.com/play/computer which has totally diffrent selectors

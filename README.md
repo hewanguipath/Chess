@@ -10,6 +10,7 @@ Setup:
 5. open workflow, modify In_Python_Path to the folder of your python
 6. open chess.com, login, start play, if play mode, change parameter In_PlayMode as true, false for puszzles
 7. run
+
 Please be aware, your account and IP might be banned if keep playing for long.
 
 TODO:

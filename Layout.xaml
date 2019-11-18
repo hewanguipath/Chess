@@ -57,7 +57,6 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="layout" sap:VirtualizedContainerService.HintSize="476,826" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -88,7 +87,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:ExtractData NextLinkSelector="{x:Null}" SimulateClick="{x:Null}" ContinueOnError="True" DataTable="[ExtractDataTable]" DelayBetweenPagesMS="300" DisplayName="Extract Board" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column1' attr='style' name2='Column2' attr2='class'&gt;&lt;webctrl tag='div' class='pieces' idx='1'/&gt;&lt;webctrl tag='div'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="ExtractData_1" MaxNumberOfResults="100">
               <ui:ExtractData.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="246d149abe03380d762b2fec8609e3f7" Selector="&lt;webctrl tag='DIV' parentid='board-layout-chessboard' /&gt;" WaitForReady="COMPLETE">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="246d149abe03380d762b2fec8609e3f7" Selector="&lt;webctrl tag='DIV' id='board-layout-chessboard' class='board-layout-chessboard board-board' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>

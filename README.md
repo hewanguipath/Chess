@@ -3,6 +3,7 @@
 This work flow depends on Stockfish and python-chess 
 
 Setup:
+
 0. download uipath community version from https://www.uipath.com/start-trial
 1. download stockfish engine from https://stockfishchess.org/
 2. modify engine.py, update the path of stockfish

@@ -2,8 +2,15 @@
 
 This work flow depends on Stockfish and python-chess 
 
-Setup:
 
+Setup Option 1, without Python:
+0. download uipath community version from https://www.uipath.com/start-trial
+1. download stockfish engine from https://stockfishchess.org/
+3. open workflow Main_StdIO, modify In_EnginePath to the folder of your engine
+4. open chess.com, login, start play, if play mode, change parameter In_PlayMode as true, false for puszzles
+5. run workflow from Main_StdIO
+
+Setup Option 2: with Python 
 0. download uipath community version from https://www.uipath.com/start-trial
 1. download stockfish engine from https://stockfishchess.org/
 2. modify engine.py, update the path of stockfish
@@ -11,7 +18,7 @@ Setup:
 4. run engine.py to verify step 1-3
 5. open workflow, modify In_Python_Path to the folder of your python
 6. open chess.com, login, start play, if play mode, change parameter In_PlayMode as true, false for puszzles
-7. run workflow
+7. run workflow from Main
 
 Please be aware, your account and IP might be banned if keep playing for long.
 

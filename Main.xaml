@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Play" this:Play.In_Python_Path="C:\Users\He.Wang\.conda\envs\PY36_TF" this:Play.In_PlayMode="False" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Play" this:Play.In_Python_Path="C:\Users\He.Wang\.conda\envs\PY36_TF" this:Play.In_PlayMode="True" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/python" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="In_Python_Path" Type="InArgument(x:String)" />
     <x:Property Name="In_PlayMode" Type="InArgument(x:Boolean)" />
@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>590,1989.33333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>778,3164.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Play_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -55,28 +55,27 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Python</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="570,1889.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="758,3064.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <p:PythonScope DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="528,1797.33333333333" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="[In_Python_Path]" TargetPlatform="x64" Version="Python_36">
+    <p:PythonScope DisplayName="Python Scope" sap:VirtualizedContainerService.HintSize="716,2972.66666666667" sap2010:WorkflowViewState.IdRef="PythonScope_1" Path="[In_Python_Path]" TargetPlatform="x64" Version="Python_36">
       <p:PythonScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="PythonEngineSessionProperty" />
           </ActivityAction.Argument>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'iexplore.exe Live'" sap:VirtualizedContainerService.HintSize="494,1761.33333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="32ca6bc99a0ce23e1db40596da86577e" Selector="&lt;html app='chrome.exe' title='* - Chess.com' /&gt;">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'iexplore.exe Live'" sap:VirtualizedContainerService.HintSize="682,2936.66666666667" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="32ca6bc99a0ce23e1db40596da86577e" Selector="&lt;html app='chrome.exe' title='* - Chess.com' /&gt;">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Play" sap:VirtualizedContainerService.HintSize="460,1615.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                <Sequence DisplayName="Play" sap:VirtualizedContainerService.HintSize="648,2790.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Name="Orientation" />
                     <Variable x:TypeArguments="x:String" Name="FenStr" />
@@ -90,16 +89,16 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="418,58.6666666666667" sap2010:WorkflowViewState.IdRef="LoadScript_3" Result="[PyScript]" ScriptFile="Engine.py" />
-                  <ui:Comment sap:VirtualizedContainerService.HintSize="418,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Get Ready" />
-                  <Sequence DisplayName="Get Oriantation" sap:VirtualizedContainerService.HintSize="418,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <p:LoadScript Code="{x:Null}" DisplayName="Load Python Script" sap:VirtualizedContainerService.HintSize="606,58.6666666666667" sap2010:WorkflowViewState.IdRef="LoadScript_3" Result="[PyScript]" ScriptFile="Engine.py" />
+                  <ui:Comment sap:VirtualizedContainerService.HintSize="606,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Get Ready" />
+                  <Sequence DisplayName="Get Oriantation" sap:VirtualizedContainerService.HintSize="606,446" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="ui:UiElement" Name="WK" />
                       <Variable x:TypeArguments="ui:UiElement" Name="BK" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -142,20 +141,20 @@
                       </Assign.Value>
                     </Assign>
                   </Sequence>
-                  <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="418,1220" sap2010:WorkflowViewState.IdRef="RetryScope_1" RetryInterval="00:00:00.0010000">
+                  <ui:RetryScope ContinueOnError="True" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="606,2018.66666666667" sap2010:WorkflowViewState.IdRef="RetryScope_1" RetryInterval="00:00:00.0010000">
                     <ui:RetryScope.ActivityBody>
                       <ActivityAction>
-                        <Sequence DisplayName="Round" sap:VirtualizedContainerService.HintSize="376,953.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                        <Sequence DisplayName="Round" sap:VirtualizedContainerService.HintSize="564,1752" sap2010:WorkflowViewState.IdRef="Sequence_23">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="334,74.6666666666667" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Observe the Chess board and generate the description string as FEN" />
-                          <If Condition="[In_PlayMode]" DisplayName="Wait clock move If PlayMode" sap:VirtualizedContainerService.HintSize="334,52.6666666666667" sap2010:WorkflowViewState.IdRef="If_9">
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="522,74.6666666666667" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Observe the Chess board and generate the description string as FEN" />
+                          <If Condition="[In_PlayMode]" DisplayName="Wait clock move If PlayMode" sap:VirtualizedContainerService.HintSize="522,441.333333333333" sap2010:WorkflowViewState.IdRef="If_9">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -235,14 +234,14 @@
                               </Sequence>
                             </If.Then>
                           </If>
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Get Layout and Generate FEN" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Layout.xaml">
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Get Layout and Generate FEN" sap:VirtualizedContainerService.HintSize="522,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Layout.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <OutArgument x:TypeArguments="x:String" x:Key="FenStr">[FenStr]</OutArgument>
                               <InArgument x:TypeArguments="x:Int32" x:Key="Orientation">[Orientation]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="334,74.6666666666667" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Thinking: Call Engine with FEN, get Best Move" />
-                          <Sequence DisplayName="Engine" sap:VirtualizedContainerService.HintSize="334,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="522,74.6666666666667" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Thinking: Call Engine with FEN, get Best Move" />
+                          <Sequence DisplayName="Engine" sap:VirtualizedContainerService.HintSize="522,479.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_22">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="p:PythonObject" Name="resObj" />
                               <Variable x:TypeArguments="x:String" Name="restr" />
@@ -250,7 +249,7 @@
                             </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -267,14 +266,14 @@
                             </Assign>
                             <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.6666666666667" sap2010:WorkflowViewState.IdRef="WriteLine_18" Text="[MoveSteps.tostring+ &quot;: &quot;+ BestMove]" />
                           </Sequence>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="334,74.6666666666667" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Take Action: highlight the piece to move, and move it in the board with click activity" />
-                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Make Move in the screen" sap:VirtualizedContainerService.HintSize="334,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Move.xaml">
+                          <ui:Comment sap:VirtualizedContainerService.HintSize="522,74.6666666666667" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Take Action: highlight the piece to move, and move it in the board with click activity" />
+                          <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Make Move in the screen" sap:VirtualizedContainerService.HintSize="522,86.6666666666667" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="Move.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:Int32" x:Key="Ori">[Orientation]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="BM">[BestMove]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
-                          <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_28">
+                          <Assign sap:VirtualizedContainerService.HintSize="522,62" sap2010:WorkflowViewState.IdRef="Assign_28">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[MoveSteps]</OutArgument>
                             </Assign.To>

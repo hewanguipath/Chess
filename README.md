@@ -1,9 +1,10 @@
 # Chess bot - Only for example inside UiPath!!!
 
-This work flow depends on Stockfish and python-chess 
+This work flow depends on Stockfish engine
 
 
 Setup Option 1, without Python:
+
 0. download uipath community version from https://www.uipath.com/start-trial
 1. download stockfish engine from https://stockfishchess.org/
 3. open workflow Main_StdIO, modify In_EnginePath to the folder of your engine
@@ -11,6 +12,7 @@ Setup Option 1, without Python:
 5. run workflow from Main_StdIO
 
 Setup Option 2: with Python 
+
 0. download uipath community version from https://www.uipath.com/start-trial
 1. download stockfish engine from https://stockfishchess.org/
 2. modify engine.py, update the path of stockfish

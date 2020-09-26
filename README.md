@@ -1,9 +1,13 @@
-[image1]:https://www.chess.com/bundles/web/images/offline-play/standardboard.6a504885.png
+[image1]:https://www.chess.com/bundles/web/images/web/board-puzzles.600ddf36@2x.png
 
 # Chess bot - Only for example inside UiPath!!!
 
 This work flow is a demo that robot will be able to play chess
-## Note: only for study purpose, if you using it play chess, you will broke the agreement with chess.com
+
+<img src="https://www.chess.com/bundles/web/images/web/board-puzzles.600ddf36@2x.png"  width="240">
+
+
+## Note: only for study purpose, if you using it play chess, you will broke the user agreement with chess.com
 
 This work flow is using Stockfish engine
 

@@ -2,7 +2,7 @@
 
 # Chess bot - Only for example inside UiPath!!!
 
-This work flow is a demo that robot will be able to play chess
+This work flow is a demo shows how the RPA would be able to play chess
 
 <img src="https://www.chess.com/bundles/web/images/web/board-puzzles.600ddf36@2x.png"  width="240">
 
